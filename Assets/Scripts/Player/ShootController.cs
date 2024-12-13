@@ -19,13 +19,13 @@ public class ShootController : MonoBehaviour
     /// </summary>
     public UnityEvent OnStopShooting;
 
-    private GameObject _bulletPrefab;
-    private GameObject _bombPrefab;
+    private Projectile _bulletPrefab;
+    private Projectile _bombPrefab;
 
     private void Awake()
     {
-        _bulletPrefab = Resources.Load<GameObject>("Prefabs/Projectiles/Bullet");
-        _bombPrefab = Resources.Load<GameObject>("Prefabs/Projectiles/Bomb");
+        _bulletPrefab = Resources.Load<Projectile>("Prefabs/Projectiles/Bullet");
+        _bombPrefab = Resources.Load<Projectile>("Prefabs/Projectiles/Bomb");
     }
 
     private void OnEnable()
