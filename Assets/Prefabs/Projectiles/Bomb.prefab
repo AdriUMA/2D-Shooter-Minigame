@@ -51,7 +51,7 @@ MonoBehaviour:
   damage: 1
   _areaDamage: 5
   _radius: 1
-  _particlePrefab: {fileID: 0}
+  _particlePrefab: {fileID: 7979352503344988833, guid: 581ea18ae97be8f44b9eadc670e3a351, type: 3}
 --- !u!212 &2115921173591526317
 SpriteRenderer:
   m_ObjectHideFlags: 0
