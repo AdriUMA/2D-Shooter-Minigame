@@ -6830,7 +6830,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2fc524291aa2d746a04c09971c8d500, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fxVolume: 1
+  _fxVolume: 0.1
   _fx:
   - {fileID: 463839781}
   - {fileID: 196288185}

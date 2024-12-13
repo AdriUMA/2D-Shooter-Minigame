@@ -7,6 +7,8 @@ public class Bullet : Projectile
     protected override void OnHit(Enemy enemy)
     {
         enemy.TakeDamage(damage);
+
+        if(_particlePrefab == null) return;
         var particles = Instantiate(_particlePrefab, transform.position, Quaternion.identity);
         particles.Play();
     }

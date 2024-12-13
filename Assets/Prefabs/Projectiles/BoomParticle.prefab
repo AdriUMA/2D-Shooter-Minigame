@@ -47,7 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _clips:
-  - {fileID: 8300000, guid: 71f149d8daa883c4a96fa9000ce566b8, type: 3}
+  - {fileID: 8300000, guid: 038d74d3be0c8874d80115412b8cdcd4, type: 3}
+  - {fileID: 8300000, guid: 5c2f154f0ca411d4ea66b6d53aae8240, type: 3}
 --- !u!198 &8675674599231695915
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -56,14 +57,14 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2471508444557509737}
   serializedVersion: 8
-  lengthInSec: 1
-  simulationSpeed: 2
+  lengthInSec: 0.6
+  simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 0
   useUnscaledTime: 0
@@ -995,7 +996,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 50
+        scalar: 70
         minScalar: 30
         maxCurve:
           serializedVersion: 2
@@ -1049,7 +1050,7 @@ ParticleSystem:
       repeatInterval: 0.01
       probability: 1
   SizeModule:
-    enabled: 0
+    enabled: 1
     curve:
       serializedVersion: 2
       minMaxState: 1
@@ -1062,16 +1063,34 @@ ParticleSystem:
           time: 0
           value: 0
           inSlope: 0
-          outSlope: 1
+          outSlope: 0
           tangentMode: 0
           weightedMode: 0
           inWeight: 0.33333334
           outWeight: 0.33333334
         - serializedVersion: 3
-          time: 1
-          value: 1
+          time: 0.06631416
+          value: 0.96228635
+          inSlope: 0.029662298
+          outSlope: 0.029662298
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.10110397
+        - serializedVersion: 3
+          time: 0.71586484
+          value: 0.8032909
+          inSlope: -0.05086078
+          outSlope: -0.05086078
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.33333334
+          outWeight: 0.30087665
+        - serializedVersion: 3
+          time: 0.92396474
+          value: 0
           inSlope: 1
-          outSlope: 0
+          outSlope: 1
           tangentMode: 0
           weightedMode: 0
           inWeight: 0.33333334

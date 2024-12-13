@@ -15,6 +15,7 @@ public class Bomb : Projectile
         _exploted = true;
 
         enemy.TakeDamage(damage);
+
         var particles = Instantiate(_particlePrefab, transform.position, Quaternion.identity);
         particles.Play();
 
@@ -33,6 +34,9 @@ public class Bomb : Projectile
     {
         if(_exploted) return;
         _exploted = true;
+
+        var particles = Instantiate(_particlePrefab, transform.position, Quaternion.identity);
+        particles.Play();
 
         var enemies = Physics2D.OverlapCircleAll(transform.position, _radius);
 

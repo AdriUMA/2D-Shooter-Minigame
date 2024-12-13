@@ -8,6 +8,7 @@ public class FXController : MonoBehaviour
     private void Awake()
     {
         _particleSystem = GetComponents<ParticleSystem>();
+        Debug.Log(_particleSystem.Length);
     }
 
     public void Play()
