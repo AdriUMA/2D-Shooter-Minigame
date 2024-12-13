@@ -36,8 +36,14 @@ public class Player : MonoSingleton<Player>
         if (collision.TryGetComponent(out Enemy enemy))
         {
             Debug.Log("Player died");
+
             IsDead = true;
             OnDeath.Invoke();
+
+            _inputs.Move.Disable();
+            _inputs.Attack.Disable();
+            _inputs.SecondaryAttack.Disable();
+            _inputs.Mouse.Disable();
         }
     }
 }

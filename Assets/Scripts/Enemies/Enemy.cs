@@ -34,8 +34,16 @@ public class Enemy : MonoBehaviour, IDamageable
         _collider = GetComponent<Collider2D>();
 
         agent.speed = speed;
+    }
 
+    private void OnEnable()
+    {
         Player.Instance.OnDeath.AddListener(OnPlayerDeath);
+    }
+
+    private void OnDisable()
+    {
+        Player.Instance.OnDeath.RemoveListener(OnPlayerDeath);
     }
 
     protected virtual IEnumerator Start()
