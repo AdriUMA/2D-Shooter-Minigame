@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 4
-  damage: 1
-  _areaDamage: 5
+  damage: 10
+  _areaDamage: 10
   _radius: 1
   _particlePrefab: {fileID: 7979352503344988833, guid: 581ea18ae97be8f44b9eadc670e3a351, type: 3}
 --- !u!212 &2115921173591526317

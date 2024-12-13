@@ -52,6 +52,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f5dd1a9442d66c429251c7c545adc65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8529003451845377512}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &7222336187095558826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,11 +145,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mainWeapon:
     projectile: {fileID: 6361416083229555550, guid: 91a2a5556782b21468b925a714b04731, type: 3}
-    cooldown: 0.1
+    cooldown: 0.075
     lastShot: 0
   _secondaryWeapon:
     projectile: {fileID: 4144202234131004610, guid: 05a85f5337f180c4a814e99b5da4b431, type: 3}
-    cooldown: 0.25
+    cooldown: 0.4
     lastShot: 0
   _shootPoint: {fileID: 5642968374313981621}
   OnStartShooting:

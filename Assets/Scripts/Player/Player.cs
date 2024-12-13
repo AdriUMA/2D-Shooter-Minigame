@@ -1,8 +1,13 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Player : MonoSingleton<Player>
 {
     private PlayerInput _inputs;
+
+    public UnityEvent OnDeath;
+
+    public bool IsDead { get; private set; } = false;
 
     protected override void Awake()
     {
@@ -31,6 +36,8 @@ public class Player : MonoSingleton<Player>
         if (collision.TryGetComponent(out Enemy enemy))
         {
             Debug.Log("Player died");
+            IsDead = true;
+            OnDeath.Invoke();
         }
     }
 }

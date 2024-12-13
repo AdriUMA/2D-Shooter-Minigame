@@ -22,6 +22,15 @@ public class CameraShake : MonoSingleton<CameraShake>
         base.Awake();
     }
 
+    public void Shake(float addCustomAmount, float addCustomDuration)
+    {
+        _currentShakeAmount = Mathf.Min(_currentShakeAmount + addCustomAmount + Random.Range(0f, _extraRandomShake), _maxShakeAccumulated);
+        _currentShakeDuration = Mathf.Min(addCustomDuration + _currentShakeDuration, _shakeMaxDuration);
+
+
+        if (_shakeCoroutine == null) _shakeCoroutine = StartCoroutine(ShakeCoroutine());
+    }
+
     public void Shake()
     {
         _currentShakeAmount = Mathf.Min(_currentShakeAmount + _shakeAmount + Random.Range(0f, _extraRandomShake), _maxShakeAccumulated);
