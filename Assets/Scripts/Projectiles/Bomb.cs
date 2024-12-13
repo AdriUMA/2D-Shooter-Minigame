@@ -14,10 +14,9 @@ public class Bomb : Projectile
         if(_exploted) return;
         _exploted = true;
 
-        enemy.TakeDamage(damage);
+        ExplosionFX();
 
-        var particles = Instantiate(_particlePrefab, transform.position, Quaternion.identity);
-        particles.Play();
+        enemy.TakeDamage(damage);
 
         var nearColliders = Physics2D.OverlapCircleAll(transform.position, _radius);
 
@@ -35,8 +34,7 @@ public class Bomb : Projectile
         if(_exploted) return;
         _exploted = true;
 
-        var particles = Instantiate(_particlePrefab, transform.position, Quaternion.identity);
-        particles.Play();
+        ExplosionFX();
 
         var enemies = Physics2D.OverlapCircleAll(transform.position, _radius);
 
@@ -47,5 +45,13 @@ public class Bomb : Projectile
                 e.TakeDamage(_areaDamage);
             }
         }
+    }
+
+    private void ExplosionFX()
+    {
+        var particles = Instantiate(_particlePrefab, transform.position, Quaternion.identity);
+        particles.Play();
+
+        CameraShake.Instance.Shake();
     }
 }
