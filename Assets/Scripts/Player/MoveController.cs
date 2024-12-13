@@ -3,8 +3,8 @@ using UnityEngine.InputSystem;
 
 public class MoveController : MonoBehaviour
 {
-    [SerializeField] private float _speed = 10f;
-    [SerializeField] private float _maxVel = 10f;
+    [SerializeField] private float speed = 10f;
+    [SerializeField] private float maxSpeed = 10f;
     [SerializeField] private float _timeToStop = 0.33f;
     [SerializeField] private AnimationCurve _stopCurve;
     private float _lastMovingTime;
@@ -45,10 +45,8 @@ public class MoveController : MonoBehaviour
         }
     }
 
-    public void SetSpeed(float newSpeed)
-    {
-        _speed = newSpeed;
-    }
+    public void SetSpeed(float newSpeed) => speed = newSpeed;
+    public void SetMaxSpeed(float newMaxSpeed) => maxSpeed = newMaxSpeed;
 
     private void MoveInput(InputAction.CallbackContext ctx)
     {
@@ -58,8 +56,9 @@ public class MoveController : MonoBehaviour
     private void Moving()
     {
         _lastMovingTime = Time.time;
-        var forze = _axisPosition * (Time.deltaTime * _speed);
-        var velocity = Vector2.ClampMagnitude(_rb.linearVelocity + forze, _maxVel);
+
+        var forze = _axisPosition * (Time.deltaTime * speed);
+        var velocity = Vector2.ClampMagnitude(_rb.linearVelocity + forze, maxSpeed);
         
         _rb.linearVelocity = velocity;
     }
