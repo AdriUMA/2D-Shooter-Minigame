@@ -19,23 +19,27 @@ public class ShootController : MonoBehaviour
     /// </summary>
     public UnityEvent OnStopShooting;
 
-    private Projectile _bulletPrefab;
-    private Projectile _bombPrefab;
+    private PlayerInput _inputs;
 
     private void Awake()
     {
-        _bulletPrefab = Resources.Load<Projectile>("Prefabs/Projectiles/Bullet");
-        _bombPrefab = Resources.Load<Projectile>("Prefabs/Projectiles/Bomb");
+        _inputs = GetComponent<PlayerInput>();
     }
 
     private void OnEnable()
     {
-        
+        _inputs.Attack.started += InputBullet;
+        _inputs.Attack.canceled += InputBullet;
+        _inputs.SecondaryAttack.started += InputBomb;
+        _inputs.SecondaryAttack.canceled += InputBomb;
     }
 
     private void OnDisable()
     {
-        
+        _inputs.Attack.started -= InputBullet;
+        _inputs.Attack.canceled -= InputBullet;
+        _inputs.SecondaryAttack.started -= InputBomb;
+        _inputs.SecondaryAttack.canceled -= InputBomb;
     }
 
     private void InputBullet(InputAction.CallbackContext ctx)
