@@ -47,8 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _clips:
-  - {fileID: 8300000, guid: 038d74d3be0c8874d80115412b8cdcd4, type: 3}
-  - {fileID: 8300000, guid: 5c2f154f0ca411d4ea66b6d53aae8240, type: 3}
+  - {fileID: 8300000, guid: 873bdbd6b52864040be2d3bc1810d18b, type: 3}
+  - {fileID: 8300000, guid: e36096f07c6401a4e87be8a20140ad0b, type: 3}
 --- !u!198 &8675674599231695915
 ParticleSystem:
   m_ObjectHideFlags: 0
