@@ -35,6 +35,8 @@ public class Player : MonoSingleton<Player>
     {
         if (collision.TryGetComponent(out Enemy enemy))
         {
+            if (!enemy.Running) return;
+
             Debug.Log("Player died");
 
             IsDead = true;

@@ -149,7 +149,7 @@ MonoBehaviour:
     lastShot: 0
   _secondaryWeapon:
     projectile: {fileID: 4144202234131004610, guid: 05a85f5337f180c4a814e99b5da4b431, type: 3}
-    cooldown: 0.4
+    cooldown: 0.25
     lastShot: 0
   _shootPoint: {fileID: 5642968374313981621}
   OnStartShooting:

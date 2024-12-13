@@ -50,7 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1.5
   health: 100
-  _spawnDelay: 1
+  _spawnDelay: 1.5
   _hitSound: {fileID: 8300000, guid: 0d93f1646ce5285459e099c8918892e1, type: 3}
   _shakeCamera: 1
   _shakeAmount: 0.06

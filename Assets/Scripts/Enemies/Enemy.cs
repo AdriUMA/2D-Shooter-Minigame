@@ -21,17 +21,17 @@ public class Enemy : MonoBehaviour, IDamageable
     [SerializeField] private AudioClip _deathSound;
 
     private SpriteRenderer _spriteRenderer;
-    private Collider2D _collider;
 
     protected NavMeshAgent agent;
 
     private Coroutine _agentDestinationUpdated;
 
+    public bool Running { get; private set; } = false;
+
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
-        _collider = GetComponent<Collider2D>();
 
         agent.speed = speed;
     }
@@ -50,7 +50,6 @@ public class Enemy : MonoBehaviour, IDamageable
     {
         float instancedTime = Time.time;
         Color color = _spriteRenderer.color;
-        _collider.enabled = false;
 
         while (Time.time - instancedTime < _spawnDelay)
         {
@@ -59,7 +58,6 @@ public class Enemy : MonoBehaviour, IDamageable
             yield return null;
         }
 
-        _collider.enabled = true;
         _spriteRenderer.color = color;
 
         Run();
@@ -70,12 +68,15 @@ public class Enemy : MonoBehaviour, IDamageable
         if (Player.Instance.IsDead) return;
         if (_agentDestinationUpdated != null) return;
 
+        Running = true;
         _agentDestinationUpdated = StartCoroutine(AgentDestinationUpdated());
     }
 
     public void Stop()
     {
         if (_agentDestinationUpdated == null) return;
+
+        Running = false;
 
         StopCoroutine(_agentDestinationUpdated);
         _agentDestinationUpdated = null;
