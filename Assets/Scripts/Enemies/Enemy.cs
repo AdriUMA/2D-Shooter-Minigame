@@ -119,6 +119,6 @@ public class Enemy : MonoBehaviour, IDamageable
 
     protected virtual void StatsOnDeath()
     {
-        LevelManager.Instance.normalEnemiesKilled++;
+        LevelManager.Instance.NormalEnemiesKilled++;
     }
 }

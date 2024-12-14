@@ -4,6 +4,8 @@ public class Bomb : Projectile
 {
     [SerializeField] private float _areaDamage = 5f;
     [SerializeField] private float _radius = 1f;
+    [SerializeField] private float _shakeAmount = 0.03f;
+    [SerializeField] private float _shakeDuration = 0.075f;
 
     [SerializeField] private FXController _particlePrefab;
 
@@ -52,6 +54,6 @@ public class Bomb : Projectile
         var particles = Instantiate(_particlePrefab, transform.position, Quaternion.identity);
         particles.Play();
 
-        CameraShake.Instance.Shake();
+        CameraShake.Instance.Shake(_shakeAmount, _shakeDuration);
     }
 }

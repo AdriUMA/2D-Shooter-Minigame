@@ -53,8 +53,8 @@ MonoBehaviour:
   _spawnDelay: 1
   _hitSound: {fileID: 8300000, guid: 0d93f1646ce5285459e099c8918892e1, type: 3}
   _shakeCamera: 1
-  _shakeAmount: 0.01
-  _shakeDuration: 0.05
+  _shakeAmount: 0.03
+  _shakeDuration: 0.1
   _deathSound: {fileID: 8300000, guid: efdc084311be72641a1bde26ddf9655f, type: 3}
 --- !u!212 &2426876051897732125
 SpriteRenderer:

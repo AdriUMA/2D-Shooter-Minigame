@@ -53,7 +53,7 @@ MonoBehaviour:
   _spawnDelay: 1.5
   _hitSound: {fileID: 8300000, guid: 0d93f1646ce5285459e099c8918892e1, type: 3}
   _shakeCamera: 1
-  _shakeAmount: 0.06
+  _shakeAmount: 0.6
   _shakeDuration: 0.1
   _deathSound: {fileID: 8300000, guid: cfa55bcaa9580a048886da178ae36361, type: 3}
   _roarSound: {fileID: 8300000, guid: 362bd8e15f010d3428d9f0b4d1fb46c8, type: 3}

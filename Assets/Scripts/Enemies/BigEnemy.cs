@@ -14,6 +14,6 @@ public class BigEnemy : Enemy
 
     protected override void StatsOnDeath()
     {
-        LevelManager.Instance.bigEnemiesKilled++;
+        LevelManager.Instance.BigEnemiesKilled++;
     }
 }

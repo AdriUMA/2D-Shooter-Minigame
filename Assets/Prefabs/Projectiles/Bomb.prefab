@@ -51,6 +51,8 @@ MonoBehaviour:
   damage: 10
   _areaDamage: 10
   _radius: 1
+  _shakeAmount: 0.01
+  _shakeDuration: 0.075
   _particlePrefab: {fileID: 7979352503344988833, guid: 581ea18ae97be8f44b9eadc670e3a351, type: 3}
 --- !u!212 &2115921173591526317
 SpriteRenderer:
