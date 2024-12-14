@@ -1,4 +1,6 @@
+using NUnit.Framework;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class ZoneSpawner : MonoBehaviour
@@ -6,11 +8,13 @@ public class ZoneSpawner : MonoBehaviour
     [SerializeField] private Transform[] _spawnPoints;
 
     [SerializeField] private Zone _zonePrefab;
+    [SerializeField] private int _maxZones = 2;
     [SerializeField] private float _startDelay = 1f;
     [SerializeField] private float _maxRandomnessTime = 7.5f;
-    private float _startTime;
 
     private Coroutine _spawnCoroutine;
+
+    private readonly List<Zone> _zones = new List<Zone>();
 
     private IEnumerator Start()
     {
@@ -32,8 +36,6 @@ public class ZoneSpawner : MonoBehaviour
         if (Player.Instance.IsDead) return;
         if (_spawnCoroutine != null) return;
 
-        _startTime = Time.time;
-
         _spawnCoroutine = StartCoroutine(SpawnCoroutine());
     }
 
@@ -52,18 +54,22 @@ public class ZoneSpawner : MonoBehaviour
 
     IEnumerator SpawnCoroutine()
     {
-        _startTime = Time.time;
-
         while (true)
         {
             SpawnZone();
             yield return new WaitForSeconds(Random.Range(0.25f, _maxRandomnessTime));
+
+            while(_zones.Count >= _maxZones)
+            {
+                yield return new WaitForSeconds(Random.Range(0.25f, 1f));
+                _zones.RemoveAll(zone => zone == null);
+            }
         }
     }
 
     private void SpawnZone()
     {
         Transform spawnPoint = _spawnPoints[Random.Range(0, _spawnPoints.Length)];
-        Instantiate(_zonePrefab, spawnPoint.position, Quaternion.identity);
+        _zones.Add(Instantiate(_zonePrefab, spawnPoint.position, Quaternion.identity));
     }
 }
