@@ -4,6 +4,10 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoSingleton<LevelManager>
 {
+    public int conqueredZones;
+    public int normalEnemiesKilled;
+    public int bigEnemiesKilled;
+
     [SerializeField] private InputActionAsset _inputActions;
 
     private InputAction _restartAction;

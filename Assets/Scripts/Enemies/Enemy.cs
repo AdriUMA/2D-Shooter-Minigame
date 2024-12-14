@@ -103,14 +103,22 @@ public class Enemy : MonoBehaviour, IDamageable
         if (Player.Instance.IsDead) return;
 
         health -= damage;
-        AudioManager.Instance.PlayFX(_hitSound);
+        AudioManager.Instance.PlaySFX(_hitSound);
         if (health <= 0) OnDeath();
     }
 
     public void OnDeath()
     {
-        AudioManager.Instance.PlayFX(_deathSound);
+        AudioManager.Instance.PlaySFX(_deathSound);
         CameraShake.Instance.Shake(_shakeAmount, _shakeDuration);
+
+        StatsOnDeath();
+
         Destroy(gameObject);
+    }
+
+    protected virtual void StatsOnDeath()
+    {
+        LevelManager.Instance.normalEnemiesKilled++;
     }
 }

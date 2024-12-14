@@ -41,7 +41,7 @@ public class AudioManager : MonoSingleton<AudioManager>
     /// Play sound effect with random pitch
     /// </summary>
     /// <param name="clip"></param>
-    public void PlayFX(AudioClip clip)
+    public void PlaySFX(AudioClip clip)
     {
         var fx = _fx[_currentFX];
         _currentFX = (_currentFX + 1) % _fx.Length;

@@ -8,7 +8,12 @@ public class BigEnemy : Enemy
 
     protected override IEnumerator Start()
     {
-        AudioManager.Instance.PlayFX(_roarSound);
+        AudioManager.Instance.PlaySFX(_roarSound);
         yield return base.Start();
+    }
+
+    protected override void StatsOnDeath()
+    {
+        LevelManager.Instance.bigEnemiesKilled++;
     }
 }

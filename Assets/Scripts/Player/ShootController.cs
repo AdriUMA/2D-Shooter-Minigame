@@ -52,7 +52,7 @@ public class ShootController : MonoBehaviour
         {
             CurrentWeapon.lastShot = Time.time;
             var projectile = Instantiate(CurrentWeapon.projectile, _shootPoint.position, _shootPoint.rotation);
-            AudioManager.Instance.PlayFX(_shootSFX[UnityEngine.Random.Range(0, _shootSFX.Length)]);
+            AudioManager.Instance.PlaySFX(_shootSFX[UnityEngine.Random.Range(0, _shootSFX.Length)]);
             OnShot?.Invoke(projectile.gameObject);
         }
     }

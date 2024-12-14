@@ -23,7 +23,7 @@ public class FXController : MonoBehaviour
         if (_clips.Length > 0)
         {
             var clip = _clips[Random.Range(0, _clips.Length)];
-            AudioManager.Instance.PlayFX(clip);
+            AudioManager.Instance.PlaySFX(clip);
         }
 
         if (lifeTime > 0f) lifeTime += 0.1f;
