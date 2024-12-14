@@ -12,7 +12,7 @@ public class MonoSingleton<T> : MonoBehaviour where T : MonoSingleton<T>
         }
         else if (Instance != this)
         {
-            Debug.LogWarning($"Multiple instances of {typeof(T)} found in the scene. Destroying this instance.");
+            Debug.Log($"Multiple instances of {typeof(T)} found in the scene. Destroying the new instance.");
             Destroy(gameObject);
         }
     }

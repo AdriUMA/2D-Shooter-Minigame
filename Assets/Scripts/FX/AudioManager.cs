@@ -31,6 +31,8 @@ public class AudioManager : MonoSingleton<AudioManager>
 
     private void Start()
     {
+        DontDestroyOnLoad(gameObject);
+
         FXVolume = _fxVolume;
         MusicVolume = _musicVolume;
     }

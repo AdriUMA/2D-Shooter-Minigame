@@ -20,6 +20,7 @@ public class ShootController : MonoBehaviour
     private readonly List<Weapon> _weaponsPerformed = new List<Weapon>();
     private Weapon CurrentWeapon => _weaponsPerformed.Count == 0 ? null : _weaponsPerformed[^1];
     [SerializeField] private Transform _shootPoint;
+    [SerializeField] private AudioClip[] _shootSFX;
 
     /// <summary>
     /// Cuando el usuario comienza a disparar
@@ -51,6 +52,7 @@ public class ShootController : MonoBehaviour
         {
             CurrentWeapon.lastShot = Time.time;
             var projectile = Instantiate(CurrentWeapon.projectile, _shootPoint.position, _shootPoint.rotation);
+            AudioManager.Instance.PlayFX(_shootSFX[UnityEngine.Random.Range(0, _shootSFX.Length)]);
             OnShot?.Invoke(projectile.gameObject);
         }
     }

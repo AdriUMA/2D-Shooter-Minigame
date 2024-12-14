@@ -100,6 +100,8 @@ public class Enemy : MonoBehaviour, IDamageable
 
     public void TakeDamage(float damage)
     {
+        if (Player.Instance.IsDead) return;
+
         health -= damage;
         AudioManager.Instance.PlayFX(_hitSound);
         if (health <= 0) OnDeath();
