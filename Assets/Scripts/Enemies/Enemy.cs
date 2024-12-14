@@ -110,7 +110,7 @@ public class Enemy : MonoBehaviour, IDamageable
     public void OnDeath()
     {
         AudioManager.Instance.PlaySFX(_deathSound);
-        CameraShake.Instance.Shake(_shakeAmount, _shakeDuration);
+        if(_shakeCamera) CameraShake.Instance.Shake(_shakeAmount, _shakeDuration);
 
         StatsOnDeath();
 
